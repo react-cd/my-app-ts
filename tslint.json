@@ -1,0 +1,23 @@
+{
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+   "rules": {
+     "ordered-imports": false,
+     "interface-name": false,
+     "max-classes-per-file":false,
+     "no-console":false,
+      "no-restricted-syntax": [
+        "error",
+        {
+          "selector": "CallExpression[callee.object.name='console'][callee.property.name=/^(log|warn|error|info|trace)$/]",
+          "message": "Unexpected property on console object was called"
+        }
+      ]
+   },
+  "linterOptions": {
+    "exclude": [
+      "config/**/*.js",
+      "node_modules/**/*.ts",
+      "coverage/lcov-report/*.js"
+    ]
+  }
+}
